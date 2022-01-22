@@ -7,7 +7,7 @@ var router = express.Router();
  */
 
 router.get('/', function(req, res) {
-  res.status(404).render('index', { title: 'Express' });
+  res.json({ message: "this is a message" })
 });
 // /test
 router.get('/test', function(req, res, next) {

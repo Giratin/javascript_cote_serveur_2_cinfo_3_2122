@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des livres</title>
+</head>
+<body>
+    <h1  style="text-align: center;"> Liste des livres </h1>
+    <table border="1" style="width: max-content; display: block; margin: auto;">
+        <thead>
+            <th> Titre </th>
+            <th> Nombre de page </th>
+            <th> Date de publication </th>
+            <th> Détails </th>
+        </thead>
+        <tbody>
+            {% for item in livres %}
+                <tr>
+                    <td> {{ item.title }} </td>
+                    <td> {{ item.pageCount }} </td>
+                    <td> {{ item.publishDate | date('Y-m-d') }} </td>
+                    <td> <a href="/books/getOne/{{ item.id }}">Détails</a> </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
